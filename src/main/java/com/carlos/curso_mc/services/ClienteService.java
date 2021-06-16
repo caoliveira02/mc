@@ -9,8 +9,6 @@ import com.carlos.curso_mc.domain.Cliente;
 import com.carlos.curso_mc.repositories.ClienteRepository;
 import com.carlos.curso_mc.services.excptions.ObjectNotFoundException;
 
-
-
 @Service
 public class ClienteService {
 	
