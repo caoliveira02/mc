@@ -44,8 +44,16 @@ public class ClienteService {
 		obj = repo.save(obj);
 		enderecoRepository.saveAll(obj.getEnderecos());
 		return obj;
-		//return repo.save(obj);
 	}
+	
+	//@Transactional
+	//public Cliente insert(Cliente obj) {
+	//	obj.setId(null);
+	//	obj = repo.save(obj);
+	//	enderecoRepository.saveAll(obj.getEnderecos());
+	//	return obj;
+	//	//return repo.save(obj);
+	//}
 	
 	public Cliente update(Cliente obj) {
 		Cliente objNew = find(obj.getId());
@@ -77,7 +85,7 @@ public class ClienteService {
 		
 	public Cliente fromDTO(ClienteNewDTO objDto) {
 		
-		Cliente cli = new Cliente(null, objDto.getNome(), objDto.getEmail(), objDto.getCofOuCnpj(), TipoCliente.toEnum(objDto.getTipo()));
+		Cliente cli = new Cliente(null, objDto.getNome(), objDto.getEmail(), objDto.getCpfOuCnpj(), TipoCliente.toEnum(objDto.getTipo()));
 		Cidade cid = new Cidade(objDto.getCidadeId(), null, null);
 		Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getNumero(), objDto.getComplemento(), objDto.getBairro(), objDto.getCep(), cli, cid);
 		
