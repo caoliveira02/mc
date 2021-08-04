@@ -9,4 +9,5 @@ import com.carlos.curso_mc.domain.Cidade;
 @Repository
 public interface CidadeRepository extends JpaRepository<Cidade, Integer> {
 
+	
 }
